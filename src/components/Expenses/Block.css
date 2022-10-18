@@ -1,0 +1,18 @@
+.block {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 20px;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.lime {
+  background-color: lime;
+}
+.red {
+  background-color: red;
+}

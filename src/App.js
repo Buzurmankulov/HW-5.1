@@ -1,36 +1,47 @@
 import "./App.css";
-import Commit from "./components/commit/Commit";
-const comment = [
+import Block from "./components/Expenses/Block";
+
+const blocks = [
   {
-    date: new Date(),
-    text: "I hope you enjoy learning React!",
-    author: {
-      name: "Hello Kitty",
-      avatarUrl: "http://placekitten.com/g/62/62",
-    },
+    id: "b2",
+    block: "green",
   },
   {
-    date: new Date(),
-    text: "I hope you enjoy learning React!",
-    author: {
-      name: "Hello Kitty",
-      avatarUrl: "http://placekitten.com/g/64/64",
-    },
+    id: "b3",
+    block: "color",
   },
   {
-    date: new Date(),
-    text: "I hope you enjoy learning React!",
-    author: {
-      name: "Hello Kitty",
-      avatarUrl: "http://placekitten.com/g/64/64",
-    },
+    id: "b4",
+    block: `${Math.random()}`,
+  },
+  {
+    id: "b5",
+    block: "green",
+  },
+  {
+    id: "b6",
+    block: `${Math.random()}`,
+  },
+  {
+    id: "b1",
+    block: "yellow",
   },
 ];
 
 function App() {
   return (
     <div className="App">
-      <Commit data={comment} />
+      {blocks.map((item) =>
+        item.block === "yellow" ? (
+          <Block className="yellow" key={item.id} />
+        ) : item.block === "green" ? (
+          <Block className="green" key={item.id} />
+        ) : item.block === "color" ? (
+          <Block className="lime" key={item.id} />
+        ) : (
+          <Block className="red" key={item.id} />
+        )
+      )}
     </div>
   );
 }
